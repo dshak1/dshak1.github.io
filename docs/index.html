@@ -1,99 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Support</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f7;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #1d1d1f;
-        }
-        
-        h2 {
-            font-size: 1.5em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: #1d1d1f;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            color: #6e6e73;
-        }
-        
-        .contact-box {
-            background-color: #f5f5f7;
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 30px;
-        }
-        
-        .email-link {
-            color: #0066cc;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: 500;
-        }
-        
-        .email-link:hover {
-            text-decoration: underline;
-        }
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #d2d2d7;
-            text-align: center;
-            color: #86868b;
-            font-size: 0.9em;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>diar shakimov</title>
+<meta name="description" content="diar shakimov: systems builder. c++ at ea sports, cs and math at sfu. developer tools that compile real benchmarks, evals that refuse to claim, harnesses that verify.">
+<meta property="og:title" content="diar shakimov">
+<meta property="og:description" content="systems builder. developer tools that compile real benchmarks, evals that refuse to claim, harnesses that verify.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dshak1.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' fill='%23fff' text-anchor='middle'%3Eds%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #111111; --muted: #5f6368; --line: #e6e6e6; --accent: #0b57d0; --tag: #f1f3f4; --code: #f6f8fa;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0e0f11; --fg: #ececec; --muted: #9aa0a6; --line: #26282c; --accent: #8ab4f8; --tag: #1b1d21; --code: #16181c; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 20px;
+  }
+  main { max-width: 44rem; margin: 0 auto; padding: 56px 0 64px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  h1 { font-size: 1.75rem; font-weight: 650; letter-spacing: -0.01em; margin: 0 0 6px; }
+  h2 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 48px 0 14px; padding-top: 18px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1.02rem; font-weight: 620; margin: 0 0 4px; }
+  p { margin: 0 0 12px; }
+  .lede { font-size: 1.08rem; color: var(--fg); max-width: 38rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 14px; margin: 14px 0 0; font-size: 0.95rem; }
+  .muted { color: var(--muted); }
+  ul.items { list-style: none; padding: 0; margin: 0; }
+  ul.items > li { padding: 16px 0 16px 16px; border-left: 2px solid var(--line); margin: 0 0 14px; }
+  ul.items > li:hover { border-left-color: var(--accent); }
+  .head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+  .win { font-size: 0.78rem; color: var(--muted); background: var(--tag); padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+  .tags span { font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); background: var(--tag); padding: 1px 7px; border-radius: 4px; }
+  .num { font-variant-numeric: tabular-nums; }
+  code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--code); padding: 1px 5px; border-radius: 4px; }
+  footer { margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--muted); }
+  footer p { margin: 0 0 6px; }
+  @media (max-width: 480px) { main { padding-top: 36px; } h1 { font-size: 1.5rem; } }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>App Support</h1>
-        
-        <p>Thank you for using our app. We're here to help you with any questions or issues you may have.</p>
-        
-        <h2>Need Help?</h2>
-        <p>If you're experiencing any issues or have questions about the app, please don't hesitate to reach out to us.</p>
-        
-        <div class="contact-box">
-            <h2>Contact Support</h2>
-            <p>Email us at: <a href="mailto:dshakimov@gmail.com" class="email-link">dshakimov@gmail.com</a></p>
-            <p>We typically respond within 24-48 hours.</p>
-        </div>
-        
-        <div class="footer">
-            <p>&copy; 2026 Diar Shakimov. All rights reserved.</p>
-        </div>
-    </div>
+<main>
+
+<header>
+  <h1>diar shakimov</h1>
+  <p class="lede">systems builder. c++ software engineer intern at ea sports, cs and math at sfu. i build the tooling that makes software provable: benchmarks that compile, evals that refuse to claim, harnesses that verify a fix actually fixed something.</p>
+  <div class="links">
+    <a href="https://github.com/dshak1">github</a>
+    <a href="https://linkedin.com/in/dshakimov">linkedin</a>
+    <a href="https://arxiv.org/abs/2608.07688">arxiv</a>
+    <a href="mailto:dshakimov@gmail.com">email</a>
+  </div>
+</header>
+
+<section id="tools">
+  <h2>developer tools</h2>
+  <ul class="items">
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/latenC">latenC</a></h3><span class="win">software systems prize, mountain madness 2026</span></div>
+      <p>a vs code extension that calls out slow c++ and then proves it. it walks the tree-sitter ast, flags performance antipatterns (false sharing, list where a vector belongs, <code>std::pow</code> where a multiply belongs, virtual dispatch where crtp fits), explains why each one misses cache or blows allocations, and on click compiles real benchmarks on your machine at O2 instead of quoting big-o. header-only micro-benchmark harness with IQR outlier removal and p95/p99 tail latency; lock-free single-producer single-consumer ring buffer with acquire/release ordering, validated over 1M items under contention. zero runtime dependencies. c++ analyzing c++.</p>
+      <div class="tags"><span>c++17</span><span>tree-sitter</span><span>vs code api</span><span>lock-free</span><span>benchmarks</span></div>
+    </li>
+
+    <!-- truth:deepswe-start -->
+    <li>
+      <div class="head"><h3>deepSWE eval harness</h3><span class="win">private</span></div>
+      <p>an ablation harness for an ai bug-fix pipeline over a private engineering-ticket corpus, built to answer "which layer failed" before anyone blames the model. contamination-controlled retrieval (self-exclusion, temporal cutoff, diff scrubbing), an eight-layer failure taxonomy (eval, model, state, tool, retrieval, context, index, prompt), preflight gates for paid runs, a run ledger that records what a solved ticket actually cost, and a structured human-verdict form. hybrid lexical plus semantic retrieval with reciprocal rank fusion took mean hit-rate from <span class="num">0.095 to 0.690</span> on 21 independently labeled cases; warm query latency went <span class="num">12.4s to 1.4s</span> with ranking proven identical on a 676-document corpus. it also caught its own circular-evaluation bug: a growth batch's gold labels had been chosen by the retrieval function under test, so the two populations now report separately and the flattering number cannot be quoted by accident.</p>
+      <div class="tags"><span>python</span><span>sqlite</span><span>embeddings</span><span>rrf</span><span>ablation</span><span>eval methodology</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3>differential verdict tool</h3><span class="win">private</span></div>
+      <p>"it works now" is not a verdict if you never saw it broken. this diffs a fix build against its own control across repeated automated runs of a large native c++ application, keyed on assert location rather than message text, with guards that refuse to claim: both arms on the same build is INVALID, fewer than two runs per arm is INDETERMINATE, flaky asserts within an arm are listed and excluded, never silently dropped. null-calibrated on byte-identical binaries across all 30 two-versus-two splits of five runs with zero spurious differences, and scenarios are ranked by cost to a trustworthy verdict (run time times the runs the measured flake rate demands), not by run time.</p>
+      <div class="tags"><span>python</span><span>a/b methodology</span><span>flake measurement</span><span>null calibration</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3>runtime verification gate</h3><span class="win">private</span></div>
+      <p>a green build is not a verdict. the gate publishes an evidence contract before anyone spends a run (chosen from the ticket's own vocabulary: visual, behavioural, or runtime signal; behavioural evidence requires a baseline), records verdicts append-only in sqlite, and lets only a claimed pass have to earn it: eight blockers (missing evidence, framing mismatch, unchanged build, no build provenance, no expected versus observed, no repro steps, a dangling evidence pointer, no green presubmit) downgrade a pass to unknown with the reason on record. the case that motivated it passed six upstream gates while the feature under test was dead; the fix was settled by a counted log signature, not by pixels.</p>
+      <div class="tags"><span>python</span><span>sqlite</span><span>evidence contracts</span></div>
+    </li>
+    <!-- truth:deepswe-end -->
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/perfmap">perfmap</a></h3><span class="win">gdsc sfu workshop, march 2026</span></div>
+      <p>a cache-aware hash map performance lab in c++17: an open-addressing baseline plus workload-tuned variants (read-heavy, churn-heavy, space-efficient, indirect storage for large payloads, scratch maps for repeated clear-and-rebuild cycles), benchmarked against the standard library and abseil with workload fixtures, structured event logs, and generated markdown and html reports. presented as the technical lead at a google developer student club workshop to about 80 attendees, on a panel with students who had interned at microsoft, apple and google.</p>
+      <div class="tags"><span>c++17</span><span>cmake</span><span>ctest</span><span>benchmarks</span><span>teaching</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/receipts">receipts</a></h3><span class="win"><a href="https://dshak1.github.io/receipts/">landing</a></span></div>
+      <p>reliability ci for computer-use agents. run a task n times on isolated cloud browsers, verify every outcome independently of what the agent claims (final url, dom state, http side-effect probes against the real backend), and get a verdict you can defend. trial zero is a positive control that voids the run if the environment is unhealthy; verdicts are typed, and the interesting row is <code>false_positive</code>: the agent said it succeeded and the verifier disagreed. self-contained html report with per-trial screenshot timelines, session recordings, and a wilson 95% confidence interval; a ci gate that exits nonzero when the verified rate drops or the false-positive rate rises.</p>
+      <div class="tags"><span>typescript</span><span>playwright</span><span>solari</span><span>ci</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3>interviewMaxx</h3><span class="win">private</span></div>
+      <p>a standard-library-only python cli that tailors a resume from a tagged accomplishment bank: keyword scoring against a job description, bullet selection by audience and confidence tag (a bullet without a traced source cannot ship), batch mode over many roles, a connections lookup that reads linkedin's own data export rather than scraping, and a hand-rolled pdf 1.4 writer with helvetica metrics and test-validated xref offsets. zero dependencies because the target machine has no package manager.</p>
+      <div class="tags"><span>python 3.14</span><span>stdlib only</span><span>pdf writer</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3>rema</h3><span class="win">private, in development</span></div>
+      <p>evidence-grounded auditing for ai infrastructure with durable operational memory: an auditor, a defender and a judge over a tamper-evident log, shipped evaluation engines, and a 1,500-plus function test suite. positioning deliberately still open.</p>
+      <div class="tags"><span>python</span><span>evals</span><span>tamper-evident log</span></div>
+    </li>
+
+  </ul>
+</section>
+
+<section id="work">
+  <h2>selected work</h2>
+  <ul class="items">
+
+    <li>
+      <div class="head"><h3><a href="https://arxiv.org/abs/2608.07688">IntelliAudit: using large language models to evaluate audit controls</a></h3><span class="win">arxiv preprint, 2026</span></div>
+      <p>co-author (3 of 7) with sfu researchers. it audits require judging whether heterogeneous organizational evidence (policies, records, spreadsheets, operational artifacts) satisfies semantic security and compliance controls; the hard part is evidentiary sufficiency, not keyword matching. i architected the multi-agent system behind it (aws bedrock agents, langchain) with a privileged and unprivileged mcp server split enforcing separation of duties across five-plus evidence pipelines, and built the report and client-communication pipeline (step functions, lambda) that cut manual reporting by 6-plus hours per audit and total cycle time by 20%. we also ran a 58-participant practitioner study, including working auditors at ey, coca-cola and telus. <a href="https://github.com/dshak1/intelliaudit-chatbot-frontend">frontend</a>.</p>
+      <div class="tags"><span>llm evaluation</span><span>multi-agent</span><span>mcp</span><span>aws</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3>abai</h3><span class="win">best use of nia, cursor hackathon vancouver 2026</span></div>
+      <p>a context runtime for high-liability ai: a responder's field update becomes a cited brief with a seven-step provenance trace and explicitly preserved unknowns instead of hallucinated certainty. live voice-to-brief demo at about 1.3 seconds with four citations. the sponsor track was judged by nia by nozomio, a yc company.</p>
+      <div class="tags"><span>next.js</span><span>nia</span><span>retrieval</span><span>provenance</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/hackML">fraud detection</a></h3><span class="win">1st, sfu ml hackathon 2026</span></div>
+      <p>ensemble random forest on a 99% imbalanced transaction dataset; engineered five-plus features (balance-mismatch flags, error signals) and optimized macro f1 across four urgency classes.</p>
+      <div class="tags"><span>python</span><span>scikit-learn</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/f1-telemetry-copilot">f1 telemetry copilot (farvis)</a></h3></div>
+      <p>a c++17 race-engineer copilot: low-latency telemetry at 50hz feeding strategy calls across 20 concurrent driver simulations, with thread-safe ring buffers because the naive version fell over. built at journeyhacks.</p>
+      <div class="tags"><span>c++17</span><span>concurrency</span><span>telemetry</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/gravity-simulator-updated">gravity simulator</a></h3></div>
+      <p>watched a documentary with my mom and built this in first year, before claude code. c++ and opengl: newtonian gravity, procedural meshes, a custom glsl shader pipeline, spacetime-curvature grid deformation at 60 fps. later the real-world benchmark target for latenC: applying its fixes gave 15x throughput and 14x traversal gains.</p>
+      <div class="tags"><span>c++</span><span>opengl</span><span>glsl</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3>risc-v and memory-hierarchy simulators</h3></div>
+      <p>from computer-systems coursework, in c and risc-v assembly: a <a href="https://github.com/dshak1/riscv-processor-simulator-c">single-cycle processor simulator</a> (full instruction decode, register and memory state), a <a href="https://github.com/dshak1/riscv-pipeline-simulator">pipelined simulator</a>, a configurable <a href="https://github.com/dshak1/cache-simulator">cache simulator</a>, <a href="https://github.com/dshak1/riscv-matrix-ops">risc-v matrix routines</a> and a <a href="https://github.com/dshak1/vector-intrinsics-programming">simd intrinsics suite</a>.</p>
+      <div class="tags"><span>c</span><span>risc-v</span><span>simd</span><span>caches</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/NIDS-GAN">nids-gan</a></h3></div>
+      <p>network intrusion detection: a random forest at 99.98% accuracy on 494k records, plus gan-generated synthetic attacks holding about 95% detection on unseen attack variants.</p>
+      <div class="tags"><span>python</span><span>scikit-learn</span><span>tensorflow</span></div>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/pypath">pypath</a></h3><span class="win">2nd of 200, fallhacks 2025</span></div>
+      <p>a teaching platform for four pathfinding algorithms through eight-plus real-world applications, with an ai-powered code reviewer.</p>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://github.com/dshak1/csnexus">csnexus (event stack)</a></h3><span class="win">1st (cohort), stormhacks 2025</span></div>
+      <p>event discovery for university tech events: aggregates from gmail and discord (100-plus messages processed) with bidirectional google calendar sync. i drove the architecture and product decisions; the ios implementation was ai-generated.</p>
+    </li>
+
+    <li>
+      <div class="head"><h3><a href="https://steppe2screen.com">steppe2screen</a></h3><span class="win">ubc ccel chapman grant</span></div>
+      <p>language and culture games for kazakh-diaspora kids, live at steppe2screen.com. i took over as the senior engineer on the grant team: production infrastructure, a ci preflight gate that catches uncommitted work and orphaned routes before deploy, build-time feature flags, and a workshop teaching kids to turn their own designs into games with llms. privacy-conscious by design for its users: anonymous, local-first, no forced accounts. <a href="https://github.com/dshak1/s2s">source</a>.</p>
+    </li>
+
+  </ul>
+</section>
+
+<section id="about">
+  <h2>about</h2>
+  <p>cs and math at simon fraser university, class of 2027. c++ software engineer intern at ea sports through december 2026. before that: research assistant on IntelliAudit, founding engineer at a compliance-software startup, events lead at google developer student club sfu, and a marketing-automation saas i built and sold in first year. hackathons i have placed at: mountain madness (software systems prize), sfu ml hackathon (1st), cursor hackathon vancouver (best use of nia), stormhacks (1st, cohort), fallhacks (2nd of 200), and cybersci regionals (5th, top scorer on the team).</p>
+  <p>i like the ugly parts of making something actually run: latency, concurrency, caches, and proving a fix fixed something. next i am aiming for a member-of-technical-staff role at an ai lab or a systems team that ships. i do not put work code here.</p>
+</section>
+
+<footer>
+  <p><a href="https://github.com/dshak1">github</a> · <a href="https://linkedin.com/in/dshakimov">linkedin</a> · <a href="mailto:dshakimov@gmail.com">dshakimov@gmail.com</a></p>
+  <p>event stack app support: <a href="mailto:dshakimov@gmail.com">dshakimov@gmail.com</a> · <a href="support/">support page</a></p>
+  <p>&copy; 2026 diar shakimov</p>
+</footer>
+
+</main>
 </body>
 </html>

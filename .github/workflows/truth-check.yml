@@ -1,0 +1,11 @@
+name: truth-check
+on:
+  push:
+  pull_request:
+jobs:
+  truth-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: public copy carries nothing it should not
+        run: bash tools/truth-check.sh
