@@ -13,7 +13,7 @@ if grep -rn --include='*.html' --include='*.md' $'\xe2\x80\x94' "$root/docs" >/d
 fi
 
 # 2. do-not-cite numbers and phrases (closed list; see the vault flex-sheet register)
-dnc='2 billion|2b tokens|239m tokens|178m tokens|70 engineers|290%|250%|20k confluence|100k sources|youngest by|youngest ever|0\.882|0\.826|76% top|teleaudit|founders inc'
+dnc='0\.690|0\.095 to|2 billion|2b tokens|239m tokens|178m tokens|70 engineers|290%|250%|20k confluence|100k sources|youngest by|youngest ever|0\.882|0\.826|76% top|teleaudit|founders inc'
 if grep -rniE --include='*.html' --include='*.md' "$dnc" "$root/docs"; then report "do-not-cite phrase found"; fi
 
 # 3. employer and domain specifics that never appear in public copy
